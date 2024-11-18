@@ -1,0 +1,59 @@
+<ion-content [fullscreen]="false">
+  <img class="background-image" src="../../../assets/images/white-background.png" alt="" />
+  <div class="centrar">
+    <div class="center-container">
+      <div class="ion-padding-vertical">
+        <ion-card
+          class="enmarcar"
+          style="
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          "
+        >
+          <img
+            alt="DUOC"
+            src="../../../assets/images/Logo_DuocUC.svg.png"
+            class="centrar"
+          />
+          <ion-card-content>
+            
+            <h3 style="color: black">
+              {{ 'PasswordRecovery.Step1' | translate }}
+            </h3>
+
+            <br />
+           
+            <form #correoForm="ngForm">
+              <ion-item class="margin-bottom-6">
+                <ion-input
+                  type="email"
+                  [(ngModel)]="correo"
+                  name="correo"
+                  [label]="'PasswordRecovery.EmailLabel' | translate"
+                  labelPlacement="floating"
+                  required="true"
+                >
+                </ion-input>
+              </ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="centrar">
+                    <ion-button
+                      size="medium"
+                      (click)="recuperarContrasena(correoForm)"
+                    >
+                      {{ 'PasswordRecovery.RecoverButton' | translate }}
+                    </ion-button>
+                    <ion-button (click)="inicio()"
+                      >{{ 'PasswordRecovery.GoBack' | translate }}</ion-button
+                    >
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>

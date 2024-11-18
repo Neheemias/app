@@ -1,0 +1,74 @@
+<ion-content [fullscreen]="false">
+
+  <img
+    class="background-image"
+    src="../../../assets/images/white-background.png"
+    alt="Background Image"
+  />
+
+
+  <div class="centrar">
+    <div class="center-container ion-padding-vertical">
+      
+      <ion-card
+        class="enmarcar"
+        style="
+          background-color: #ffffff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        "
+      >
+        
+        
+
+        <ion-card-content>
+          
+          <h2 style="color: black">
+            {{ 'PasswordRecovery.Title' | translate }}
+          </h2>
+          <h3 style="color: black">
+            {{ 'PasswordRecovery.Step2' | translate }}
+          </h3>
+
+         
+          <ion-card-header style="background-color: transparent">
+            <ion-label style="font-size: 1.7em; color: #6c757d"
+              >{{ nombre }} {{ apellido }}</ion-label
+            >
+            <br />
+            <ion-label class="Centered" style="font-size: 1.8em; color: #6c757d"
+              >{{ pregunta }}</ion-label
+            >
+          </ion-card-header>
+          <br />
+
+          
+          <ion-item class="margin-bottom-6">
+            <ion-input
+              type="text"
+              [(ngModel)]="respuestaInput"
+              [label]="'AnswerRecovery.EmailLabel' | translate"
+              labelPlacement="floating"
+              required="true"
+            >
+            </ion-input>
+          </ion-item>
+
+        
+          <ion-grid>
+            <ion-row>
+              <ion-col class="centrar">
+                <ion-button size="medium" (click)="verificarRespuesta()">
+                  {{ 'answerRecovery.RecoverButton' | translate }}
+                </ion-button>
+
+                <ion-button [routerLink]="['/ingreso']"
+                  >{{ 'PasswordRecovery.GoBack' | translate }}</ion-button
+                >
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
